@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aplicativo Multi-Funções</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Aplicativo Multi-Funções</h1>
+        <div class="menu">
+            <button onclick="showSection('conversaoMoeda')">Conversão de Moeda</button>
+            <button onclick="showSection('calculoIMC')">Cálculo de IMC</button>
+            <button onclick="showSection('conversaoMedidas')">Conversão de Medidas</button>
+        </div>
+
+        <div id="conversaoMoeda" class="section hidden">
+            <h2>Conversão de Moeda</h2>
+            <input type="number" id="valorMoeda" placeholder="Valor a converter">
+            <input type="text" id="deMoeda" placeholder="Moeda de origem (USD, EUR, BRL)">
+            <input type="text" id="paraMoeda" placeholder="Moeda de destino (USD, EUR, BRL)">
+            <button onclick="converterMoeda()">Converter</button>
+            <p id="resultadoMoeda"></p>
+        </div>
+
+        <div id="calculoIMC" class="section hidden">
+            <h2>Cálculo de IMC</h2>
+            <input type="number" id="peso" placeholder="Peso em kg">
+            <input type="number" id="altura" placeholder="Altura em metros">
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <p id="resultadoIMC"></p>
+        </div>
+
+        <div id="conversaoMedidas" class="section hidden">
+            <h2>Conversão de Medidas</h2>
+            <input type="number" id="valorMedida" placeholder="Valor">
+            <select id="tipoConversao">
+                <option value="metrosParaKilometros">Metros para Quilômetros</option>
+                <option value="quilometrosParaMetros">Quilômetros para Metros</option>
+                <option value="centimetrosParaMetros">Centímetros para Metros</option>
+            </select>
+            <button onclick="converterMedidas()">Converter</button>
+            <p id="resultadoMedidas"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
